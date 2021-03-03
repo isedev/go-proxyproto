@@ -215,8 +215,8 @@ func TestParseVersion1Overflow(t *testing.T) {
 	bufSize := reader.Size()
 	ds.NBytes = bufSize * 16
 	parseVersion1(reader)
-	if ds.NBytes > bufSize {
-		t.Fatalf("read: expected max %d bytes, actual %d\n", bufSize, ds.NBytes)
+	if ds.NRead > bufSize {
+		t.Fatalf("read: expected max %d bytes, actual %d\n", bufSize, ds.NRead)
 	}
 }
 
